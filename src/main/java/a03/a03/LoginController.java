@@ -53,7 +53,7 @@ public class LoginController {
                         login_message.setText("Please enter password with at least 1 digit, 1 upper and lower case " +
                                 "and 1 special character");
                     else {
-                        login_message.setText("Success!");
+                        m.changeScene("success.fxml");
                     }
                 }
             }
