@@ -28,6 +28,11 @@ public class LoginController {
         loginValidation();
     }
 
+    public void userLogout(ActionEvent event) throws IOException {
+        Main m = new Main();
+        m.changeScene("login.fxml");
+    }
+
     public void loginValidation() throws IOException {
         Main m = new Main();
         if (password.getText().isBlank() || email.getText().isBlank())
