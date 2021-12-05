@@ -1,0 +1,8 @@
+* fcfb94d : Final commit Created MainTest to check for changeScene Updated LoginControllerTest for more tests Updated LoginController to allow for tests to occur Cleaned up formatting
+* e5c408a : Added LoginControllerTest, first test passed
+* eb8bc05 : Updated logout button to work Removed old Main code
+* 577c867 : Updated cancel button Removed commented code Updated fxml file to allow for cancel button Added logout button (need to fix) on successful login
+* 0aff13b : Updated main to allow for changing scenes Updated successful login page
+* 7dc3241 : Fixed if statements
+* 787e0a4 : Added if statements to check for user input (almost working) Added button control Changed fxml file structure
+* a4f6c61 : Initial commit - have created fxml file, main and controller classes
