@@ -33,25 +33,32 @@ public class LoginController {
         m.changeScene("login.fxml");
     }
 
-    public void loginValidation() throws IOException {
+    public boolean loginValidation() throws IOException {
         Main m = new Main();
-        if (password.getText().isBlank() || email.getText().isBlank())
+        boolean validPassword = true;
+        if (password.getText().isBlank() || email.getText().isBlank()) {
+            validPassword = false;
             login_message.setText("Please enter your email and password");
-        else {
-            if (!email.getText().matches("[a-zA-Z0-9-+=$%^&*_]+@[a-zA-Z0-9-+=$%^&*_]+\\.com"))
+        } else {
+            if (!email.getText().matches("[a-zA-Z0-9-+=$%^&*_]+@[a-zA-Z0-9-+=$%^&*_]+\\.com")) {
                 login_message.setText("Email format is not correct");
-            else {
-                if (password.getText().length() <= 7)
+                validPassword = false;
+            } else {
+                if (password.getText().length() <= 7) {
                     login_message.setText("Password must be at least 7 characters");
-                else {
-                    if (!password.getText().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-._=])(?=\\S+$).{7,}$"))
+                    validPassword = false;
+                } else {
+                    if (!password.getText().matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+-._=])(?=\\S+$).{7,}$")) {
                         login_message.setText("Please enter password with at least 1 digit, 1 upper and lower case " +
                                 "and 1 special character");
-                    else {
+                        validPassword = false;
+
+                    } else {
                         m.changeScene("success.fxml");
                     }
                 }
             }
         }
+        return validPassword;
     }
 }

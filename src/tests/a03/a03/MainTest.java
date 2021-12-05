@@ -1,19 +1,19 @@
 package a03.a03;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.testfx.framework.junit5.Start;
 import java.io.IOException;
 
-public class Main extends Application {
+class MainTest {
 
-    private static Stage stg;
-
-    @Override
+    @Start
     public void start(Stage stage1) throws Exception{
-        stg = stage1;
+        Stage stg = stage1;
         stage1.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         stage1.setTitle("Registration form");
@@ -21,12 +21,13 @@ public class Main extends Application {
         stage1.show();
     }
 
+    @DisplayName("Should change scene")
+    @Test
     public void changeScene(String fxml) throws IOException {
+        Main m = new Main();
+        Stage stg = new Stage();
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stg.getScene().setRoot(pane);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
+        m.changeScene("success.fxml");
     }
 }

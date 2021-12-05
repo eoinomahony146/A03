@@ -27,7 +27,7 @@
          <Label text="password:" />
          <PasswordField fx:id="password" alignment="CENTER" prefHeight="17.0" prefWidth="12.0" promptText="password" />
          <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#closeButton" text="cancel" />
-         <Button fx:id="loginButton" mnemonicParsing="false" onAction="#userLogin" text="submit" />
+         <Button fx:id="loginButton" mnemonicParsing="false" onAction="#userLogin" text="login" />
          <Label fx:id="login_message" alignment="CENTER" contentDisplay="CENTER" prefHeight="72.0" prefWidth="216.0" wrapText="true" />
       </VBox>
    </children>
